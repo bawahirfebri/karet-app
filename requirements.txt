@@ -1,0 +1,17 @@
+Flask==2.3.3
+Flask-Migrate==4.0.5
+Flask-SocketIO==5.3.6
+Flask-SQLAlchemy==3.0.3
+matplotlib
+numpy
+opencv-python
+pandas
+Pillow
+postgres
+psycopg2
+psycopg2-binary
+python-dotenv
+python-socketio
+shapely
+socketio
+SQLAlchemy
