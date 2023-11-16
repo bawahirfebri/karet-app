@@ -1,0 +1,218 @@
+<aside class="flex-col">
+    <header class="flex-row">
+        <span class="material-symbols-outlined">psychiatry</span>
+        <h2>Lorem Ips.</h2>
+    </header>
+    <hr>
+    <div class="title-section">
+        <span>MANAGE</span>
+    </div>
+    <div class="menu-section">
+        <div class="item flex-col">
+            <div class="item-title flex-row">
+                <div class="item-name flex-row">
+                    <span class="material-symbols-outlined">folder_open</span>
+                    <span class="small-text">Data</span>
+                </div>
+                <div class="arrow">
+                    <span class="material-symbols-outlined" id="">chevron_right</span>
+                    <span class="material-symbols-outlined" id="hide">expand_less</span>
+                </div>
+            </div>
+            <div class="list flex-col" id="hide">
+                <span class="input">
+                    <span class="small-text" id="active">Input Citra</span>
+                    <form method="post" action="/" enctype="multipart/form-data">
+                        <input name="file" type="file" class="file-input citra" hidden>
+                        <button class="submit" hidden></button>
+                    </form>
+                </span>
+                <span class="input">
+                    <span class="small-text" id="">Input Citra NIR</span>
+                    <form method="post" action="/" enctype="multipart/form-data">
+                        <input name="file-nir" type="file" class="file-input citra-nir" hidden>
+                        <button class="submit" hidden></button>
+                    </form>
+                </span>
+                <span class="input">
+                    <span class="small-text" id="">Input Citra RE</span>
+                    <form method="post" action="/" enctype="multipart/form-data">
+                        <input name="file-re" type="file" class="file-input citra-re" hidden>
+                        <button class="submit" hidden></button>
+                    </form>
+                </span>
+                <span class="input">
+                    <span class="small-text" id="">Input Citra Red</span>
+                    <form method="post" action="/" enctype="multipart/form-data">
+                        <input name="file-red" type="file" class="file-input citra-red" hidden>
+                        <button class="submit" hidden></button>
+                    </form>
+                </span>
+                <span class="input">
+                    <span class="small-text">Input Data Occurance</span>
+                    <form method="post" action="/" enctype="multipart/form-data">
+                        <input name="file" type="file" class="file-input" hidden>
+                        <button class="submit" hidden></button>
+                    </form>
+                </span>
+            </div>
+        </div>
+        <div class="item flex-col">
+            <div class="item-title flex-row">
+                <div class="item-name flex-row">
+                    <span class="material-symbols-outlined">analytics</span>
+                    <span class="small-text">Analisis</span>
+                </div>
+                <div class="arrow">
+                    <span class="material-symbols-outlined" id="">chevron_right</span>
+                    <span class="material-symbols-outlined" id="hide">expand_less</span>
+                </div>
+            </div>
+            <div class="list flex-col" id="hide">
+                <a href="{{ url_for('segmentasi')}}"><span class="small-text">Segmentasi</span></a>
+                <a href=""><span class="small-text">Tingkat Keparahan</span></a>
+                <a href=""><span class="small-text" id="active">Indeks Vegetasi</span></a>
+            </div>
+        </div>
+        <div class="item flex-col">
+            <div class="item-title flex-row">
+                <div class="item-name flex-row">
+                    <span class="material-symbols-outlined">edit</span>
+                    <span class="small-text">Edit</span>
+                </div>
+                <div class="arrow">
+                    <span class="material-symbols-outlined" id="">chevron_right</span>
+                    <span class="material-symbols-outlined" id="hide">expand_less</span>
+                </div>
+            </div>
+            <div class="list flex-col" id="hide">
+                <span class="small-text" data-layers>Layers</span>
+                <span class="small-text" data-occurance>Data Occurance</span>
+            </div>
+        </div>
+        <div class="item flex-col">
+            <div class="item-title flex-row">
+                <div class="item-name flex-row">
+                    <span class="material-symbols-outlined">download</span>
+                    <span class="small-text">Download</span>
+                </div>
+                <div class="arrow">
+                    <span class="material-symbols-outlined" id="">chevron_right</span>
+                    <span class="material-symbols-outlined" id="hide">expand_less</span>
+                </div>
+            </div>
+            <div class="list flex-col" id="hide">
+                <a href="{{ url_for('download', filename='gulma_rgb.tif') }}" download><span class="small-text">Download Gulma</span></a>
+                <a href="{{ url_for('download', filename='non_gulma_rgb.tif') }}" download><span class="small-text">Download Karet</span></a>
+                <a href="" download><span class="small-text">Download Severity Level</span></a>
+            </div>
+        </div>
+        <div class="item flex-col">
+            <div class="item-title flex-row">
+                <div class="item-name flex-row">
+                    <span class="material-symbols-outlined">history</span>
+                    <span class="small-text">Histori</span>
+                </div>
+                <div class="arrow">
+                    <span class="material-symbols-outlined" id="">chevron_right</span>
+                    <span class="material-symbols-outlined" id="hide">expand_less</span>
+                </div>
+            </div>
+            <div class="list flex-col" id="hide">
+                <span class="small-text">Histori 1</span>
+                <span class="small-text">Histori 2</span>
+                <span class="small-text">Histori 3</span>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="title-section">
+        <span>CONTROL</span>
+    </div>
+    <div class="control-section flex-col">
+        <div class="layers" id='hide'>
+            {% if gulma_url %}
+            <div class="item-title flex-row">
+                <div class="item-name flex-row">
+                    <span class="material-symbols-outlined">imagesmode</span>
+                    <span class="small-text">Label Gulma</span>
+                </div>
+                <div class="arrow">
+                    <span class="material-symbols-outlined" id="">visibility</span>
+                    <span class="material-symbols-outlined" id="hide">visibility_off</span>
+                </div>
+            </div>
+            <div class="item-title flex-row">
+                <div class="item-name flex-row">
+                    <span class="material-symbols-outlined">imagesmode</span>
+                    <span class="small-text">Label Karet</span>
+                </div>
+                <div class="arrow">
+                    <span class="material-symbols-outlined" id="">visibility</span>
+                    <span class="material-symbols-outlined" id="hide">visibility_off</span>
+                </div>
+            </div>
+            <div class="item-title flex-row">
+                <div class="item-name flex-row">
+                    <span class="material-symbols-outlined">imagesmode</span>
+                    <span class="small-text">Original</span>
+                </div>
+                <div class="arrow">
+                    <span class="material-symbols-outlined" id="">visibility</span>
+                    <span class="material-symbols-outlined" id="hide">visibility_off</span>
+                </div>
+            </div>
+            <div class="item-title flex-row">
+                <div class="item-name flex-row">
+                    <span class="material-symbols-outlined">imagesmode</span>
+                    <span class="small-text">Gulma</span>
+                </div>
+                <div class="arrow">
+                    <span class="material-symbols-outlined" id="">visibility</span>
+                    <span class="material-symbols-outlined" id="hide">visibility_off</span>
+                </div>
+            </div>
+            <div class="item-title flex-row">
+                <div class="item-name flex-row">
+                    <span class="material-symbols-outlined">imagesmode</span>
+                    <span class="small-text">Karet</span>
+                </div>
+                <div class="arrow">
+                    <span class="material-symbols-outlined" id="">visibility</span>
+                    <span class="material-symbols-outlined" id="hide">visibility_off</span>
+                </div>
+            </div>
+            {% elif image_url %}
+            <div class="item-title flex-row">
+                <div class="item-name flex-row">
+                    <span class="material-symbols-outlined">imagesmode</span>
+                    <span class="small-text">Original</span>
+                </div>
+                <div class="arrow">
+                    <span class="material-symbols-outlined" id="">visibility</span>
+                    <span class="material-symbols-outlined" id="hide">visibility_off</span>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        <div class="item-input flex-row" id="hide">
+            <form method="post" action="/occurance" class="flex-row">
+                <input type="text" placeholder="Longtitude, Latitude" name="occurance">
+                <button><span class="material-symbols-outlined">add</span></button>
+            </form>
+        </div>
+        <div class="item-list" id="hide">
+            {% for item in data %}
+            <div class="item-title flex-row">
+                <div class="item-name flex-row">
+                    <span class="material-symbols-outlined">location_on</span>
+                    <span class="small-text">{{item[0]}}, {{item[1]}}</span>
+                </div>
+                <div class="arrow">
+                    <span class="material-symbols-outlined">remove</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</aside>

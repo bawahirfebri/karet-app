@@ -1,0 +1,56 @@
+<main class="flex-col">
+    <header class="flex-row">
+        <div class="project-title">
+            <small>Project /</small>
+            <h3>Karet BPM-22</h3>
+        </div>
+        <div class="process-section flex-col">
+            <div class="process-name">
+                <small style="color: hsl(220, 10%, 94%);">.</small>
+                {% if image_url %}
+                <small>Input Citra</small>
+                {% if gulma_url and karet_url %}
+                <small>> Segmentasi</small>
+                {% endif %}
+                {% endif %}
+            </div>
+            <div class="progress">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+        <div class="user-profile flex-row">
+            <div class="user-info flex-col">
+                <p><b>Lorem Ipsum</b></p>
+                <small>G64190096</small>
+            </div>
+            <div class="user-image flex-row">
+                <img src="{{ url_for('static', filename='images/profile-1.jpg')}}" alt="user-image">
+            </div>
+        </div>
+    </header>
+    <div class="canvas flex-col">
+        <div class="dropdown flex-col" id="hide">
+            <div class="item flex-row">
+                <span class="material-symbols-outlined">person</span>
+                <p>Profile</p>
+            </div>
+            <div class="item flex-row">
+                <span class="material-symbols-outlined">create_new_folder</span>
+                <p>New Project</p>
+            </div>
+            <div class="item flex-row">
+                <span class="material-symbols-outlined">logout</span>
+                <p>Sign out</p>
+            </div>
+        </div>
+        {% if gulma_url %}
+        <img src="{{karet_url}}" alt="image-karet" class="img-canvas" id="img-karet">
+        <img src="{{gulma_url}}" alt="image-gulma" class="img-canvas" id="img-gulma">
+        <img src="{{image_url}}" alt="image-original" class="img-canvas" id="img-original">
+        <img src="{{label_karet_url}}" alt="image-label-karet" class="img-canvas" id="img-label-karet">
+        <img src="{{label_gulma_url}}" alt="image-label-gulma" class="img-canvas" id="img-label-gulma">
+        {% elif image_url %}
+        <img src="{{image_url}}" alt="image-original" class="img-canvas" id="img-original">
+        {% endif %}
+    </div>
+</main>
