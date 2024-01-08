@@ -3,8 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.colors import Normalize
 # unable install with pip
-# from tensorflow.keras.models import load_model
-# from osgeo import gdal
+from tensorflow.keras.models import load_model
+#from osgeo import gdal
 
 def prediction(model, image, patch_size=128):
 
